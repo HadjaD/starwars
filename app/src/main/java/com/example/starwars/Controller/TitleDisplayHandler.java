@@ -16,6 +16,7 @@ import retrofit2.Response;
 public class TitleDisplayHandler implements Callback<FilmResults>{
     private List<Films> results = new ArrayList<>();
     private FilmFragment filmFragment;
+    private final String[] yUrl ={"MpkrMqmmy5k", "Vf90oa4G-w4", "bD7bpG-zDJQ", "5UnjrG_N8hU", "5UfA_aKBGMc", "JNwNXF9Y6kY", "sGbxmsDFVnE"}; //YouTube Video URL;
     public TitleDisplayHandler(FilmFragment ff){
         this.filmFragment = ff;
     }
@@ -23,9 +24,7 @@ public class TitleDisplayHandler implements Callback<FilmResults>{
     public TitleDisplayHandler(){}
 
     public void start(){
-        Log.d("TAG    >>>","CALLING");
         Call<FilmResults> films = SWHttpClient.get().getAllFilms();
-        Log.v("TAG    >>>","END CALLING");
         films.enqueue(this);
     }
 
@@ -34,10 +33,10 @@ public class TitleDisplayHandler implements Callback<FilmResults>{
         if(response.isSuccessful()) {
             FilmResults list = response.body();
             this.results = list.getResults();
+            setUrl(this.results);
             Log.v("TAG    >>>>>>>","Response Success >>>>>>"+this.results.size());
             this.filmFragment.setData(this.results);
         }else{
-            Log.v("TAG    >>>","Response Error");
             System.out.println(response.raw().request().url());
 
         }
@@ -50,5 +49,8 @@ public class TitleDisplayHandler implements Callback<FilmResults>{
     }
     public List<Films> getResults(){
         return this.results;
+    }
+    public void setUrl(List<Films> films){
+        for(int i = 0; i<yUrl.length; i++) films.get(i).setYouTubeVideo(yUrl[i]);
     }
 }

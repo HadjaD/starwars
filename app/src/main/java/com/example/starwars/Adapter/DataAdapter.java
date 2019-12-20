@@ -2,6 +2,7 @@ package com.example.starwars.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,14 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.starwars.Model.Films;
 import com.example.starwars.R;
-import com.example.starwars.Vue.FilmsActivity;
+import com.example.starwars.Vue.FilmActivity;
 
 import java.util.List;
 
 public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Films> films;
     private Context context;
-
     public DataAdapter(List<Films> films) {
         this.films = films;
         this.context = context;
@@ -30,7 +30,7 @@ public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.test, parent, false);
+                .inflate(R.layout.filmview, parent, false);
         return new DataHolder(view);
     }
 
@@ -69,6 +69,7 @@ public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         TextView title;
         ImageView icon;
         View layout;
+        String url = "";
         public DataHolder(View itemView){
             super(itemView);
             layout = itemView;
@@ -77,11 +78,27 @@ public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             icon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(v.getContext(), FilmsActivity.class);
+                    Intent intent = new Intent(v.getContext(), FilmActivity.class);
+                    String[] data = getFilmPosition((String)title.getText());
+                    intent.putExtra("film",data[0]);
+                    intent.putExtra("url", data[1]);
+                    Log.d("TAG    >>>",intent.getStringExtra("film"));
                     v.getContext().startActivity(intent);
                 }
             });
 
         }
     }
+    public String[] getFilmPosition(String title){
+        String [] data = new String[2];
+        for(int i = 0; i<this.films.size(); i++){
+            if(this.films.get(i).getTitle().equals(title)){
+                data[0] = Integer.toString(i);
+                data[1] = this.films.get(i).getYouTubeUrl();
+                break;
+            }
+        }
+        return data;
+    }
+
 }

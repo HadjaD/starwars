@@ -32,7 +32,7 @@ public class PeopleByIDCall implements Callback<People> {
         Log.d("TAG    >>>","PARSED ID >>>>>"+this.Id);
         //Integer id = Integer.parseInt(this.Id);
 
-        Call<People> people = SWHttpClient.get().getPeople(1);
+        Call<People> people = SWHttpClient.get().getPeople(Integer.parseInt(this.Id)+1);
         Log.v("TAG    >>>","END CALLING");
         people.enqueue(this);
     }

@@ -18,6 +18,7 @@ public class Films {
     private String edited;
     private String created;
     private String url; // ID
+    private String YouTubeVideo;
 
     public Films(){}
     public Films(String title, Integer episode_id,
@@ -67,5 +68,12 @@ public class Films {
                 ", Created='" + created + '\'' +
                 ", Url='" + url + '\'' +
                 '}';
+    }
+    public void setYouTubeVideo(String YouTubeVideo){
+        this.YouTubeVideo = YouTubeVideo;
+    }
+
+    public String getYouTubeUrl() {
+        return this.YouTubeVideo;
     }
 }

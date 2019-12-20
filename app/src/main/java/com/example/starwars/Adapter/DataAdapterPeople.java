@@ -20,7 +20,6 @@ import java.util.List;
 public class DataAdapterPeople extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<People> people;
     private Context context;
-
     public DataAdapterPeople(List<People> people) {
         this.people = people;
         this.context = context;
@@ -30,7 +29,7 @@ public class DataAdapterPeople extends RecyclerView.Adapter<RecyclerView.ViewHol
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.test, parent, false);
+                .inflate(R.layout.filmview, parent, false);
         return new DataHolder(view);
     }
 
@@ -40,8 +39,6 @@ public class DataAdapterPeople extends RecyclerView.Adapter<RecyclerView.ViewHol
             final DataHolder dataHolder = (DataHolder)holder;
             final People people = this.people.get(position);
             dataHolder.title.setText(people.getName());
-
-
         }
 
     }
@@ -78,11 +75,22 @@ public class DataAdapterPeople extends RecyclerView.Adapter<RecyclerView.ViewHol
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), PeopleActivity.class);
+                    intent.putExtra("people",getPeoplePosition((String)title.getText()));
                     v.getContext().startActivity(intent);
                 }
             });
 
         }
+    }
+    public String getPeoplePosition(String name){
+        String data = "";
+        for(int i = 0; i<this.people.size(); i++){
+            if(this.people.get(i).getName().equals(name)){
+                data = Integer.toString(i);
+                break;
+            }
+        }
+        return data;
     }
 }
 

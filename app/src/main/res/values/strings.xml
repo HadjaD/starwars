@@ -12,4 +12,5 @@
         Please select an item you would like to display on the top right menu of the screen.</string>
     <string name="tab_text_1">Films</string>
     <string name="tab_text_2">People</string>
+    <string name="apikey">AIzaSyBrbUPiHfdczqFG85JZ-ckIqTaauhDaRdE</string>
 </resources>

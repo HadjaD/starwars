@@ -28,6 +28,7 @@ public class PeopleActivity extends AppCompatActivity {
     private TextView edited;
     private TextView url;
     private PeopleByIDCall call;
+    private String donnee;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +40,9 @@ public class PeopleActivity extends AppCompatActivity {
         this.call.start();
 
 
+    }
+    public void setDonnee(String name){
+        this.donnee = name;
     }
     public void displayData(People people){
         this.name = findViewById(R.id.name);
