@@ -1,6 +1,5 @@
 package com.example.starwars.Adapter;
 
-import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,10 +19,8 @@ import java.util.List;
 
 public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private List<Films> films;
-    private Context context;
     public DataAdapter(List<Films> films) {
         this.films = films;
-        this.context = context;
     }
 
     @NonNull
@@ -40,8 +37,6 @@ public class DataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             final DataHolder dataHolder = (DataHolder)holder;
             final Films film = this.films.get(position);
             dataHolder.title.setText(film.getTitle());
-
-
         }
 
     }

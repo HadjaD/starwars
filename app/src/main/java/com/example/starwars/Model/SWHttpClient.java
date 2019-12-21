@@ -17,10 +17,6 @@ public class SWHttpClient {
         loadClient();
     }
 
-    private SWHttpClient() {
-        //loadClient();
-    }
-
     public static StarWars get() {
         return SwAPI_CLIENT;
     }
@@ -33,14 +29,6 @@ public class SWHttpClient {
                 .writeTimeout(10, TimeUnit.SECONDS)
                 .readTimeout(15, TimeUnit.SECONDS)
                 .build();
-
-        //Uncomment these lines below to start logging each request.
-
-        /*
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-        httpClient.addInterceptor(logging);
-        */
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -49,8 +37,6 @@ public class SWHttpClient {
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(httpClient)
                 .build();
-
-
         SwAPI_CLIENT = retrofit.create(StarWars.class);
     }
 }

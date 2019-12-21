@@ -27,6 +27,7 @@ public class PeopleActivity extends AppCompatActivity {
     private TextView species;
     private TextView edited;
     private TextView url;
+    private TextView starships;
     private PeopleByIDCall call;
     private String donnee;
     @Override
@@ -56,21 +57,23 @@ public class PeopleActivity extends AppCompatActivity {
         this.films = findViewById(R.id.films);
         this.vehicles = findViewById(R.id.vehicles);
         this.species = findViewById(R.id.species);
+        this.starships = findViewById(R.id.starships);
         this.edited = findViewById(R.id.edited);
         this.url = findViewById(R.id.url);
-        name.setText("Title    "+people.getName());
-        birth.setText("Birth Year    "+people.getBirth_year());
-        eye.setText("Eye Color    "+people.getEye_color());
-        mass.setText("Mass    "+people.getMass());
-        height.setText("Height    "+people.getHeight());
-        gender.setText("Gender    "+people.getGender());
-        skin.setText("Skin Color    "+people.getSkin_color());
-        hair.setText("Hair Color    "+people.getHair_color());
-        vehicles.setText("Total Vehicles    "+people.getVehicles());
-        species.setText("Total Species    "+people.getSpecies());
-        films.setText("Total Films    "+people.getFilms());
-        edited.setText("Total Vehicles    "+people.getEdited());
-        url.setText("Total Vehicles    "+people.getUrl());
+        name.setText("Title    : "+people.getName());
+        birth.setText("Birth Year    : "+people.getBirth_year());
+        eye.setText("Eye Color   : "+people.getEye_color());
+        mass.setText("Mass    : "+people.getMass());
+        height.setText("Height    : "+people.getHeight());
+        gender.setText("Gender   : "+people.getGender());
+        skin.setText("Skin Color    : "+people.getSkin_color());
+        hair.setText("Hair Color    : "+people.getHair_color());
+        vehicles.setText("Total Vehicles   : "+people.getVehicles());
+        species.setText("Total Species    : "+people.getSpecies());
+        starships.setText("Total Starships    : "+people.getStarships());
+        films.setText("Total Films    : "+people.getFilms());
+        edited.setText("Edited on    : "+people.getEdited());
+        url.setText("Url    : : "+people.getUrl());
 
 
     }

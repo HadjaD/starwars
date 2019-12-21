@@ -37,7 +37,6 @@ public class FilmActivity extends YouTubeBaseActivity implements
         this.call.start();
         YouTubePlayerView youTubeView = findViewById(R.id.youtube_view);
         youTubeView.initialize(YoutubeDeveloperKey, this);
-        //displayData(this.call.getSearchedFilm());
 
     }
     @Override
@@ -72,7 +71,6 @@ public class FilmActivity extends YouTubeBaseActivity implements
          * play, pause and seeking to a position by code.
          */
         if (!wasRestored) {
-            //YPlayer.cueVideo(this.call.getSearchedFilm().getYouTubeUrl());
             YPlayer.cueVideo(url);
         }
     }

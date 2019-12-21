@@ -21,8 +21,6 @@ public class TitleDisplayHandler implements Callback<FilmResults>{
         this.filmFragment = ff;
     }
 
-    public TitleDisplayHandler(){}
-
     public void start(){
         Call<FilmResults> films = SWHttpClient.get().getAllFilms();
         films.enqueue(this);

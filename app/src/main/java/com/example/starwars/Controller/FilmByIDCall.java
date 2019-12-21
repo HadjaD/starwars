@@ -46,8 +46,5 @@ public class FilmByIDCall implements Callback<Films> {
         Log.d("TAG    >>>","Error   "+t.getMessage());
 
     }
-    public Films getSearchedFilm(){
-        return this.film;
-    }
 
 }

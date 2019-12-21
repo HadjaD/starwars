@@ -7,9 +7,9 @@
     <string name="Sptitle">species</string>
     <string name="Vtitle">vehicles</string>
     <string name="Sstitle">starShips</string>
-    <string name="message">Hello! Welcome to starwars app.The app uses Starwars API to display characters,
-        movies, planets, species, vehicles and the starships used in the Sage.
-        Please select an item you would like to display on the top right menu of the screen.</string>
+    <string name="message">Hello! Welcome to the starwars app.The app uses Starwars API to display characters and
+        movies from the Seven Episodes.
+        Please select the item on the top right menu of the screen to see content.</string>
     <string name="tab_text_1">Films</string>
     <string name="tab_text_2">People</string>
     <string name="apikey">AIzaSyBrbUPiHfdczqFG85JZ-ckIqTaauhDaRdE</string>
