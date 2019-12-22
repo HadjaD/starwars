@@ -45,7 +45,7 @@ Fonctionnalités:
   
   - *PeopleActivity*: cette vue fait appel au controleur _PeopleByIDCall_ pour récupérer les données sur un personnage.
   
-       <img width="192" alt="people" src="https://user-images.githubusercontent.com/32294639/71321422-4b5a9a00-24b9-11ea-8a0d-1c07379a975c.PNG">
+       <img width="192" alt="people" src="https://user-images.githubusercontent.com/32294639/71322538-cc6d5d80-24c8-11ea-8ccf-f8b3b644cdd0.PNG">
   
   
   
