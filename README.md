@@ -47,6 +47,10 @@ Fonctionnalités:
   
        <img width="192" alt="people" src="https://user-images.githubusercontent.com/32294639/71322538-cc6d5d80-24c8-11ea-8ccf-f8b3b644cdd0.PNG">
   
+**Autres**
+ - Mise de données en cache avec utilisation des SharedPreferences
+ - YouTubeVideoPlayer
+ - Scrolls ...
   
   
 
